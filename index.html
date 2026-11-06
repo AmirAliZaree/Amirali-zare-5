@@ -20,6 +20,7 @@
 :root{
   --cyan:#42e8ff;
   --blue:#3979ff;
+  --purple:#9b54ff;
   --bg:#050914;
   --muted:#8495b3;
 }
@@ -147,7 +148,7 @@ h1{
 .shield-area{
   width:230px;
   height:230px;
-  margin:40px auto 35px;
+  margin:40px auto 45px;
   position:relative;
   display:grid;
   place-items:center;
@@ -218,55 +219,136 @@ h1{
   to{opacity:.4;transform:scale(1.15)}
 }
 
-/* BUTTONS CONTAINER */
+/* PLATFORMS SECTIONS (DOWNLOAD CARDS) */
 
-.download-wrapper{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
+.platforms-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #fff;
 }
 
-.download{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  padding:17px 30px;
-  border-radius:14px;
-  color:#04101a;
-  font-size:15px;
-  font-weight:900;
-  text-decoration:none;
-  background:linear-gradient(110deg,#48efff,#5489ff);
-  box-shadow:0 0 35px #43e5ff35;
-  transition:.3s;
+.platforms-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-bottom: 75px;
 }
 
-.download.windows{
-  background:linear-gradient(110deg,#5489ff,#9b54ff);
-  color:#fff;
-  box-shadow:0 0 35px #7a43ff35;
+.platform-card {
+  border: 1px solid #ffffff14;
+  background: linear-gradient(145deg, #111c30a8, #0b1220c9);
+  border-radius: 23px;
+  padding: 32px;
+  text-align: right;
+  backdrop-filter: blur(15px);
+  transition: .3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.download:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 45px #43e5ff65;
+.platform-card:hover {
+  border-color: #42e8ff55;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px #0005;
 }
 
-.download.windows:hover{
-  box-shadow:0 10px 45px #7a43ff65;
+.platform-card.windows-card:hover {
+  border-color: #9b54ff55;
 }
 
-.download svg{
-  width:21px;
-  height:21px;
+.platform-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
-.download-info{
-  margin-top:15px;
-  font-size:11px;
-  color:#7789a7;
+.platform-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+}
+
+.android-icon {
+  background: #42e8ff12;
+  color: var(--cyan);
+  border: 1px solid #42e8ff33;
+}
+
+.windows-icon {
+  background: #9b54ff12;
+  color: var(--purple);
+  border: 1px solid #9b54ff33;
+}
+
+.platform-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.platform-info h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.platform-info span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.platform-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 2;
+  margin-bottom: 25px;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.download-btn.android {
+  background: linear-gradient(110deg, #48efff, #5489ff);
+  color: #04101a;
+  box-shadow: 0 0 25px #43e5ff25;
+}
+
+.download-btn.windows {
+  background: linear-gradient(110deg, #9b54ff, #5489ff);
+  color: #fff;
+  box-shadow: 0 0 25px #9b54ff25;
+}
+
+.download-btn:hover {
+  transform: translateY(-3px);
+}
+
+.download-btn.android:hover {
+  box-shadow: 0 8px 30px #43e5ff55;
+}
+
+.download-btn.windows:hover {
+  box-shadow: 0 8px 30px #9b54ff55;
+}
+
+.download-btn svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* FEATURES */
@@ -387,6 +469,10 @@ footer strong{
   display:inline-block;
 }
 
+@media(max-width:850px){
+  .platforms-grid {grid-template-columns: 1fr;}
+}
+
 @media(max-width:700px){
   .hero{padding:60px 0 50px}
   .features,.steps{grid-template-columns:1fr}
@@ -433,7 +519,7 @@ footer strong{
   <p class="subtitle">
     اتصال ساده، تجربه‌ای متفاوت
     <br>
-    برنامه رسمی ZARE VPN را برای اندروید و ویندوز دریافت کن.
+    برنامه رسمی ZARE VPN را برای پلتفرم دلخواه خود دریافت کنید.
   </p>
 
   <div class="shield-area">
@@ -478,35 +564,68 @@ footer strong{
 
   </div>
 
-  <!-- بخش دکمه‌های دانلود (اندروید و ویندوز) -->
-  <div class="download-wrapper">
-    <!-- دکمه اندروید -->
-    <a class="download"
-       href="https://github.com/armanlife/arman-vpn-client/releases/latest/download/Arman-VPN-Android-universal.apk">
-      <svg viewBox="0 0 24 24" fill="none">
-        <path d="M12 3V15M7 10L12 15L17 10M5 20H19"
-        stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      دانلود نسخه اندروید (APK)
-    </a>
+</section>
 
-    <!-- دکمه ویندوز (لینک فایل ویندوز را اینجا قرار دهید) -->
-    <a class="download windows"
-       href="https://github.com/armanlife/arman-vpn-client/releases/latest/download/Arman-VPN-Windows-x64.zip">
-      <svg viewBox="0 0 24 24" fill="none">
-        <path d="M3 5H10V12H3V5ZM3 13H10V20H3V13ZM11 5H21V12H11V5ZM11 13H21V20H11V13Z"
-        stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      دانلود نسخه ویندوز (Setup)
-    </a>
+<!-- بخش انتخاب پلتفرم‌ها (کارت‌های جداگانه برای اندروید و ویندوز) -->
+<section class="platforms-section">
+  <div class="platforms-title">نسخه‌های رسمی دانلود</div>
+  
+  <div class="platforms-grid">
+
+    <!-- کارت اندروید -->
+    <div class="platform-card">
+      <div>
+        <div class="platform-header">
+          <div class="platform-icon android-icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 3V15M7 10L12 15L17 10M5 20H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="platform-info">
+            <h3>نسخه اندروید</h3>
+            <span>Android APK</span>
+          </div>
+        </div>
+        <p class="platform-desc">
+          مخصوص تمامی گوشی‌ها و تبلت‌های اندرویدی. نصب سریع، مصرف بهینه باتری و اتصال پایدار و امن.
+        </p>
+      </div>
+      <a class="download-btn android" href="https://github.com/armanlife/arman-vpn-client/releases/latest/download/Arman-VPN-Android-universal.apk">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 3V15M7 10L12 15L17 10M5 20H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        دانلود فایل APK
+      </a>
+    </div>
+
+    <!-- کارت ویندوز -->
+    <div class="platform-card windows-card">
+      <div>
+        <div class="platform-header">
+          <div class="platform-icon windows-icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M3 5H10V12H3V5ZM3 13H10V20H3V13ZM11 5H21V12H11V5ZM11 13H21V20H11V13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="platform-info">
+            <h3>نسخه ویندوز</h3>
+            <span>Windows Desktop</span>
+          </div>
+        </div>
+        <p class="platform-desc">
+          مخصوص کامپیوترها و لپ‌تاپ‌های ویندوزی (۱۰ و ۱۱). محیط کاربری بزرگ‌تر، سرعت بالا و پایداری فوق‌العاده.
+        </p>
+      </div>
+      <!-- جایگزین کردن لینک زیر با لینک مستقیم فایل ویندوز خود -->
+      <a class="download-btn windows" href="https://github.com/armanlife/arman-vpn-client/releases/latest/download/Arman-VPN-Windows-x64.zip">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 3V15M7 10L12 15L17 10M5 20H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        دانلود نسخه ویندوز
+      </a>
+    </div>
+
   </div>
-
-  <div class="download-info">
-    ANDROID & WINDOWS · OFFICIAL RELEASES
-  </div>
-
 </section>
 
 <section class="features">
@@ -520,7 +639,7 @@ footer strong{
       </svg>
     </div>
     <h3>راه‌اندازی آسان</h3>
-    <p>دریافت و نصب برنامه در چند مرحله ساده روی دستگاه‌های مختلف.</p>
+    <p>دریافت و نصب برنامه در چند مرحله ساده.</p>
   </article>
 
   <article class="card">
@@ -533,8 +652,8 @@ footer strong{
         stroke-linecap="round"/>
       </svg>
     </div>
-    <h3>اندروید و ویندوز</h3>
-    <p>پشتیبانی کامل از گوشی‌های اندرویدی و سیستم‌عامل ویندوز.</p>
+    <h3>چند پلتفرمی</h3>
+    <p>پشتیبانی کامل از سیستم‌عامل‌های اندروید و ویندوز.</p>
   </article>
 
   <article class="card">
@@ -562,24 +681,24 @@ footer strong{
     <div class="step">
       <div class="number">۱</div>
       <div>
-        <b>انتخاب و دانلود</b>
-        <p>نسخه متناسب با سیستم‌عامل خود (اندروید یا ویندوز) را دانلود کنید.</p>
+        <b>انتخاب نسخه</b>
+        <p>بسته به دستگاه خود (گوشی یا کامپیوتر)، دکمه دانلود مناسب را انتخاب کنید.</p>
       </div>
     </div>
 
     <div class="step">
       <div class="number">۲</div>
       <div>
-        <b>اجازه دسترسی / نصب</b>
-        <p>فایل نصبی را اجرا کرده و مراحل نصب را در دستگاه خود طی کنید.</p>
+        <b>دریافت فایل</b>
+        <p>فایل نصبی مربوطه را دانلود کرده و روی دستگاه خود اجرا نمایید.</p>
       </div>
     </div>
 
     <div class="step">
       <div class="number">۳</div>
       <div>
-        <b>شروع اتصال</b>
-        <p>برنامه را اجرا کنید و از اتصال امن و پایدار لذت ببرید.</p>
+        <b>اتصال پایدار</b>
+        <p>برنامه را باز کرده و با یک کلیک متصل شوید.</p>
       </div>
     </div>
 
