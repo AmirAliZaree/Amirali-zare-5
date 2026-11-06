@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b14">
+<meta name="description" content="دانلود رسمی برنامه ZARE VPN">
+<title>ZARE VPN | دانلود رسمی</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Vazirmatn',Tahoma,sans-serif;
+  background:
+  radial-gradient(ellipse at 50% 0%,#10234a,transparent 55%),
+  #070b14;
+  color:#f5f8ff;
+  min-height:100vh;
+}
+
+.container{
+  width:min(1100px,92%);
+  margin:auto;
+}
+
+header{
+  height:85px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #ffffff15;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  direction:ltr;
+  font-size:21px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.logo{
+  width:45px;
+  height:45px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:linear-gradient(135deg,#43e5ff,#477bff);
+  color:#06101c;
+  font-size:25px;
+  box-shadow:0 0 25px #43e5ff55;
+}
+
+.status{
+  color:#72f3c5;
+  font-size:12px;
+  border:1px solid #72f3c544;
+  padding:8px 15px;
+  border-radius:30px;
+}
+
+.hero{
+  text-align:center;
+  padding:85px 0 65px;
+}
+
+.tag{
+  display:inline-block;
+  padding:8px 16px;
+  border:1px solid #ffffff20;
+  border-radius:30px;
+  color:#a8c4e9;
+  font-size:13px;
+}
+
+h1{
+  direction:ltr;
+  font-size:clamp(45px,9vw,85px);
+  font-weight:900;
+  margin:25px 0 15px;
+  background:linear-gradient(90deg,#fff,#43e5ff,#668cff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.description{
+  color:#aab9d0;
+  line-height:2;
+  font-size:16px;
+  max-width:600px;
+  margin:auto;
+}
+
+.app-logo{
+  width:125px;
+  height:125px;
+  margin:38px auto;
+  display:grid;
+  place-items:center;
+  border-radius:35px;
+  background:linear-gradient(145deg,#142d4d,#0b1526);
+  border:1px solid #43e5ff66;
+  box-shadow:0 0 65px #43e5ff25;
+  transform:rotate(-5deg);
+}
+
+.app-logo span{
+  font-size:65px;
+  font-weight:900;
+  color:#43e5ff;
+  transform:rotate(5deg);
+}
+
+.download{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:17px 35px;
+  border-radius:15px;
+  background:linear-gradient(100deg,#43e5ff,#658bff);
+  color:#06101c;
+  font-size:16px;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:0 12px 35px #43e5ff35;
+  transition:.3s;
+}
+
+.download:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 45px #43e5ff66;
+}
+
+.hint{
+  color:#8091aa;
+  font-size:12px;
+  margin-top:15px;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin:20px 0 70px;
+}
+
+.feature{
+  text-align:center;
+  padding:25px 15px;
+  background:linear-gradient(145deg,#111b2d,#0b1220);
+  border:1px solid #ffffff12;
+  border-radius:20px;
+}
+
+.feature .icon{
+  font-size:30px;
+  margin-bottom:12px;
+}
+
+.feature h3{
+  font-size:16px;
+  margin-bottom:8px;
+}
+
+.feature p{
+  color:#9ba9c1;
+  font-size:12px;
+  line-height:2;
+}
+
+.guide{
+  padding:30px;
+  margin-bottom:70px;
+  border:1px solid #ffffff15;
+  border-radius:22px;
+  background:#101a2b;
+}
+
+.guide h2{
+  font-size:22px;
+  margin-bottom:25px;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.step{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.number{
+  min-width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  background:#43e5ff20;
+  color:#43e5ff;
+  font-weight:bold;
+}
+
+.step b{
+  display:block;
+  font-size:14px;
+  margin-bottom:6px;
+}
+
+.step span{
+  color:#9ba9c1;
+  font-size:12px;
+  line-height:2;
+}
+
+footer{
+  text-align:center;
+  padding:30px 10px;
+  border-top:1px solid #ffffff15;
+  color:#7888a1;
+  font-size:12px;
+}
+
+footer strong{
+  direction:ltr;
+  display:inline-block;
+  color:#43e5ff;
+}
+
+@media(max-width:700px){
+  .features{
+    grid-template-columns:1fr;
+  }
+
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding:60px 0 45px;
+  }
+
+  .guide{
+    padding:22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="container">
+  <div class="brand">
+    <div class="logo">Z</div>
+    ZARE VPN
+  </div>
+
+  <div class="status">● وب‌سایت رسمی</div>
+</header>
+
+<main class="container">
+
+<section class="hero">
+
+  <div class="tag">⚡ تجربه‌ای ساده برای اتصال</div>
+
+  <h1>ZARE VPN</h1>
+
+  <p class="description">
+    با ZARE VPN برنامه را دریافت کن
+    و در چند قدم ساده راه‌اندازی‌اش کن.
+  </p>
+
+  <div class="app-logo">
+    <span>Z</span>
+  </div>
+
+  <a class="download"
+  href="https://github.com/armanlife/arman-vpn-client/releases/latest/download/Arman-VPN-Android-universal.apk">
+
+    <span>↓</span>
+    دانلود مستقیم برنامه
+
+  </a>
+
+  <div class="hint">
+    فایل نصب اندروید (APK)
+  </div>
+
+</section>
+
+<section class="features">
+
+  <div class="feature">
+    <div class="icon">⚡</div>
+    <h3>راه‌اندازی آسان</h3>
+    <p>دانلود و نصب در چند مرحله ساده</p>
+  </div>
+
+  <div class="feature">
+    <div class="icon">📱</div>
+    <h3>مخصوص اندروید</h3>
+    <p>دریافت فایل نصب APK برای گوشی</p>
+  </div>
+
+  <div class="feature">
+    <div class="icon">🛡️</div>
+    <h3>تجربه‌ای مطمئن‌تر</h3>
+    <p>مجوزها و تنظیمات برنامه را بررسی کن</p>
+  </div>
+
+</section>
+
+<section class="guide">
+
+  <h2>راهنمای نصب برنامه</h2>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="number">۱</div>
+      <div>
+        <b>دانلود فایل</b>
+        <span>روی دکمه دانلود بزن و فایل APK را دریافت کن.</span>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="number">۲</div>
+      <div>
+        <b>اجازه نصب</b>
+        <span>در صورت نیاز اجازه نصب از مرورگر مورداعتماد را فعال کن.</span>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="number">۳</div>
+      <div>
+        <b>نصب و اجرا</b>
+        <span>برنامه را نصب کن و اجرا کن.</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  © <span id="year"></span>
+  <strong>ZARE VPN</strong>
+  — تمامی حقوق محفوظ است.
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+new Date().getFullYear();
+</script>
+
+</body>
+</html>
