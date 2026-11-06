@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -219,14 +218,21 @@ h1{
   to{opacity:.4;transform:scale(1.15)}
 }
 
-/* BUTTON */
+/* BUTTONS CONTAINER */
+
+.download-wrapper{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+}
 
 .download{
   display:inline-flex;
   align-items:center;
   justify-content:center;
   gap:12px;
-  padding:17px 34px;
+  padding:17px 30px;
   border-radius:14px;
   color:#04101a;
   font-size:15px;
@@ -237,9 +243,19 @@ h1{
   transition:.3s;
 }
 
+.download.windows{
+  background:linear-gradient(110deg,#5489ff,#9b54ff);
+  color:#fff;
+  box-shadow:0 0 35px #7a43ff35;
+}
+
 .download:hover{
   transform:translateY(-5px);
   box-shadow:0 10px 45px #43e5ff65;
+}
+
+.download.windows:hover{
+  box-shadow:0 10px 45px #7a43ff65;
 }
 
 .download svg{
@@ -417,7 +433,7 @@ footer strong{
   <p class="subtitle">
     اتصال ساده، تجربه‌ای متفاوت
     <br>
-    برنامه رسمی ZARE VPN را دریافت کن.
+    برنامه رسمی ZARE VPN را برای اندروید و ویندوز دریافت کن.
   </p>
 
   <div class="shield-area">
@@ -462,21 +478,33 @@ footer strong{
 
   </div>
 
-  <a class="download"
-     href="https://github.com/armanlife/arman-vpn-client/releases/latest/download/Arman-VPN-Android-universal.apk">
+  <!-- بخش دکمه‌های دانلود (اندروید و ویندوز) -->
+  <div class="download-wrapper">
+    <!-- دکمه اندروید -->
+    <a class="download"
+       href="https://github.com/armanlife/arman-vpn-client/releases/latest/download/Arman-VPN-Android-universal.apk">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M12 3V15M7 10L12 15L17 10M5 20H19"
+        stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      دانلود نسخه اندروید (APK)
+    </a>
 
-    <svg viewBox="0 0 24 24" fill="none">
-      <path d="M12 3V15M7 10L12 15L17 10M5 20H19"
-      stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-
-    دانلود مستقیم برنامه
-
-  </a>
+    <!-- دکمه ویندوز (لینک فایل ویندوز را اینجا قرار دهید) -->
+    <a class="download windows"
+       href="https://github.com/armanlife/arman-vpn-client/releases/latest/download/Arman-VPN-Windows-x64.zip">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M3 5H10V12H3V5ZM3 13H10V20H3V13ZM11 5H21V12H11V5ZM11 13H21V20H11V13Z"
+        stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      دانلود نسخه ویندوز (Setup)
+    </a>
+  </div>
 
   <div class="download-info">
-    ANDROID APK · OFFICIAL RELEASE
+    ANDROID & WINDOWS · OFFICIAL RELEASES
   </div>
 
 </section>
@@ -492,7 +520,7 @@ footer strong{
       </svg>
     </div>
     <h3>راه‌اندازی آسان</h3>
-    <p>دریافت و نصب برنامه در چند مرحله ساده.</p>
+    <p>دریافت و نصب برنامه در چند مرحله ساده روی دستگاه‌های مختلف.</p>
   </article>
 
   <article class="card">
@@ -505,8 +533,8 @@ footer strong{
         stroke-linecap="round"/>
       </svg>
     </div>
-    <h3>مخصوص اندروید</h3>
-    <p>دریافت فایل نصب APK برای گوشی اندرویدی.</p>
+    <h3>اندروید و ویندوز</h3>
+    <p>پشتیبانی کامل از گوشی‌های اندرویدی و سیستم‌عامل ویندوز.</p>
   </article>
 
   <article class="card">
@@ -534,24 +562,24 @@ footer strong{
     <div class="step">
       <div class="number">۱</div>
       <div>
-        <b>دانلود APK</b>
-        <p>روی دکمه دانلود بزن و فایل نصب را دریافت کن.</p>
+        <b>انتخاب و دانلود</b>
+        <p>نسخه متناسب با سیستم‌عامل خود (اندروید یا ویندوز) را دانلود کنید.</p>
       </div>
     </div>
 
     <div class="step">
       <div class="number">۲</div>
       <div>
-        <b>اجازه نصب</b>
-        <p>در صورت نیاز اجازه نصب از مرورگر مورد اعتماد را فعال کن.</p>
+        <b>اجازه دسترسی / نصب</b>
+        <p>فایل نصبی را اجرا کرده و مراحل نصب را در دستگاه خود طی کنید.</p>
       </div>
     </div>
 
     <div class="step">
       <div class="number">۳</div>
       <div>
-        <b>نصب و اجرا</b>
-        <p>برنامه را نصب کن و برای شروع آن را اجرا کن.</p>
+        <b>شروع اتصال</b>
+        <p>برنامه را اجرا کنید و از اتصال امن و پایدار لذت ببرید.</p>
       </div>
     </div>
 
