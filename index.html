@@ -4,260 +4,380 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#070b14">
-<meta name="description" content="دانلود رسمی برنامه ZARE VPN">
-<title>ZARE VPN | دانلود رسمی</title>
+<meta name="theme-color" content="#050914">
+<title>ZARE VPN | Premium Security</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
-
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
 
+:root{
+  --cyan:#42e8ff;
+  --blue:#3979ff;
+  --bg:#050914;
+  --muted:#8495b3;
+}
+
 body{
-  font-family:'Vazirmatn',Tahoma,sans-serif;
-  background:
-  radial-gradient(ellipse at 50% 0%,#10234a,transparent 55%),
-  #070b14;
-  color:#f5f8ff;
-  min-height:100vh;
+  font-family:'Vazirmatn',sans-serif;
+  background:var(--bg);
+  color:#fff;
+  overflow-x:hidden;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  width:650px;
+  height:650px;
+  background:#087eff12;
+  filter:blur(120px);
+  top:-250px;
+  left:25%;
+  pointer-events:none;
 }
 
 .container{
-  width:min(1100px,92%);
+  width:min(1150px,92%);
   margin:auto;
 }
 
+/* HEADER */
+
 header{
-  height:85px;
+  height:90px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  border-bottom:1px solid #ffffff15;
+  justify-content:space-between;
+  border-bottom:1px solid #ffffff12;
 }
 
 .brand{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:13px;
   direction:ltr;
-  font-size:21px;
+}
+
+.brand-icon{
+  width:43px;
+  height:43px;
+  border:1px solid #42e8ff55;
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  background:#42e8ff0c;
+  color:var(--cyan);
+  box-shadow:0 0 25px #42e8ff20;
+}
+
+.brand-name{
+  font-size:20px;
   font-weight:900;
   letter-spacing:2px;
 }
 
-.logo{
-  width:45px;
-  height:45px;
-  display:grid;
-  place-items:center;
-  border-radius:14px;
-  background:linear-gradient(135deg,#43e5ff,#477bff);
-  color:#06101c;
-  font-size:25px;
-  box-shadow:0 0 25px #43e5ff55;
+.brand-name span{
+  color:var(--cyan);
 }
 
-.status{
-  color:#72f3c5;
-  font-size:12px;
-  border:1px solid #72f3c544;
+.badge{
+  font-size:11px;
+  color:#6fffd0;
   padding:8px 15px;
+  border:1px solid #6fffd033;
   border-radius:30px;
+  background:#6fffd008;
 }
+
+/* HERO */
 
 .hero{
   text-align:center;
-  padding:85px 0 65px;
+  padding:80px 0 75px;
+  position:relative;
 }
 
-.tag{
-  display:inline-block;
-  padding:8px 16px;
-  border:1px solid #ffffff20;
-  border-radius:30px;
-  color:#a8c4e9;
-  font-size:13px;
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  color:#9fb5d7;
+  border:1px solid #ffffff18;
+  background:#ffffff06;
+  padding:9px 17px;
+  border-radius:40px;
+  font-size:12px;
+}
+
+.live-dot{
+  width:7px;
+  height:7px;
+  background:#43edba;
+  border-radius:50%;
+  box-shadow:0 0 12px #43edba;
 }
 
 h1{
   direction:ltr;
-  font-size:clamp(45px,9vw,85px);
+  font-size:clamp(45px,8vw,82px);
   font-weight:900;
-  margin:25px 0 15px;
-  background:linear-gradient(90deg,#fff,#43e5ff,#668cff);
+  letter-spacing:3px;
+  margin:24px 0 12px;
+  background:linear-gradient(100deg,#fff 10%,#a3f5ff 48%,#5889ff 90%);
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
 }
 
-.description{
-  color:#aab9d0;
-  line-height:2;
+.subtitle{
+  color:#a0aec5;
   font-size:16px;
-  max-width:600px;
-  margin:auto;
+  line-height:2;
 }
 
-.app-logo{
-  width:125px;
-  height:125px;
-  margin:38px auto;
+/* SECURITY SHIELD */
+
+.shield-area{
+  width:230px;
+  height:230px;
+  margin:40px auto 35px;
+  position:relative;
   display:grid;
   place-items:center;
-  border-radius:35px;
-  background:linear-gradient(145deg,#142d4d,#0b1526);
-  border:1px solid #43e5ff66;
-  box-shadow:0 0 65px #43e5ff25;
-  transform:rotate(-5deg);
 }
 
-.app-logo span{
-  font-size:65px;
-  font-weight:900;
-  color:#43e5ff;
-  transform:rotate(5deg);
+.glow{
+  position:absolute;
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  background:#078cff;
+  filter:blur(65px);
+  opacity:.25;
+  animation:glow 3s infinite alternate;
 }
+
+.shield-ring{
+  position:absolute;
+  width:205px;
+  height:205px;
+  border:1px solid #42e8ff35;
+  border-radius:50%;
+  box-shadow:inset 0 0 35px #42e8ff08,0 0 35px #42e8ff12;
+  animation:rotate 18s linear infinite;
+}
+
+.shield-ring:before,
+.shield-ring:after{
+  content:"";
+  position:absolute;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 15px var(--cyan);
+}
+
+.shield-ring:before{
+  top:28px;
+  left:32px;
+}
+
+.shield-ring:after{
+  bottom:28px;
+  right:32px;
+}
+
+.shield{
+  width:125px;
+  height:145px;
+  position:relative;
+  z-index:2;
+  filter:drop-shadow(0 0 18px #35dfff65);
+  animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+@keyframes rotate{
+  to{transform:rotate(360deg)}
+}
+
+@keyframes glow{
+  from{opacity:.15;transform:scale(.85)}
+  to{opacity:.4;transform:scale(1.15)}
+}
+
+/* BUTTON */
 
 .download{
   display:inline-flex;
   align-items:center;
   justify-content:center;
   gap:12px;
-  padding:17px 35px;
-  border-radius:15px;
-  background:linear-gradient(100deg,#43e5ff,#658bff);
-  color:#06101c;
-  font-size:16px;
+  padding:17px 34px;
+  border-radius:14px;
+  color:#04101a;
+  font-size:15px;
   font-weight:900;
   text-decoration:none;
-  box-shadow:0 12px 35px #43e5ff35;
+  background:linear-gradient(110deg,#48efff,#5489ff);
+  box-shadow:0 0 35px #43e5ff35;
   transition:.3s;
 }
 
 .download:hover{
   transform:translateY(-5px);
-  box-shadow:0 15px 45px #43e5ff66;
+  box-shadow:0 10px 45px #43e5ff65;
 }
 
-.hint{
-  color:#8091aa;
-  font-size:12px;
-  margin-top:15px;
+.download svg{
+  width:21px;
+  height:21px;
 }
+
+.download-info{
+  margin-top:15px;
+  font-size:11px;
+  color:#7789a7;
+}
+
+/* FEATURES */
 
 .features{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
-  margin:20px 0 70px;
+  margin-bottom:75px;
 }
 
-.feature{
-  text-align:center;
-  padding:25px 15px;
-  background:linear-gradient(145deg,#111b2d,#0b1220);
-  border:1px solid #ffffff12;
-  border-radius:20px;
+.card{
+  padding:27px 22px;
+  border:1px solid #ffffff13;
+  border-radius:19px;
+  background:linear-gradient(145deg,#111c30a8,#0b1220c9);
+  backdrop-filter:blur(15px);
+  transition:.3s;
 }
 
-.feature .icon{
-  font-size:30px;
-  margin-bottom:12px;
+.card:hover{
+  border-color:#42e8ff55;
+  transform:translateY(-5px);
+  box-shadow:0 15px 40px #0005;
 }
 
-.feature h3{
-  font-size:16px;
-  margin-bottom:8px;
+.card-icon{
+  width:45px;
+  height:45px;
+  display:grid;
+  place-items:center;
+  border-radius:13px;
+  color:var(--cyan);
+  background:#42e8ff12;
+  margin-bottom:17px;
 }
 
-.feature p{
-  color:#9ba9c1;
+.card-icon svg{
+  width:23px;
+  height:23px;
+}
+
+.card h3{
+  font-size:15px;
+  margin-bottom:9px;
+}
+
+.card p{
   font-size:12px;
+  color:var(--muted);
   line-height:2;
 }
 
+/* GUIDE */
+
 .guide{
-  padding:30px;
-  margin-bottom:70px;
-  border:1px solid #ffffff15;
-  border-radius:22px;
-  background:#101a2b;
+  border:1px solid #ffffff14;
+  background:linear-gradient(130deg,#101c30,#09111f);
+  border-radius:23px;
+  padding:32px;
+  margin-bottom:75px;
 }
 
 .guide h2{
-  font-size:22px;
-  margin-bottom:25px;
+  font-size:21px;
+  margin-bottom:27px;
 }
 
 .steps{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  gap:25px;
 }
 
 .step{
   display:flex;
   align-items:flex-start;
-  gap:12px;
+  gap:13px;
 }
 
 .number{
-  min-width:32px;
-  height:32px;
+  min-width:34px;
+  height:34px;
+  border-radius:11px;
+  background:#42e8ff15;
+  border:1px solid #42e8ff40;
+  color:var(--cyan);
   display:grid;
   place-items:center;
-  border-radius:10px;
-  background:#43e5ff20;
-  color:#43e5ff;
-  font-weight:bold;
+  font-weight:800;
 }
 
 .step b{
   display:block;
   font-size:14px;
-  margin-bottom:6px;
+  margin-bottom:7px;
 }
 
-.step span{
-  color:#9ba9c1;
+.step p{
   font-size:12px;
+  color:var(--muted);
   line-height:2;
 }
 
+/* FOOTER */
+
 footer{
+  border-top:1px solid #ffffff12;
   text-align:center;
-  padding:30px 10px;
-  border-top:1px solid #ffffff15;
-  color:#7888a1;
+  padding:28px 10px;
+  color:#75839b;
   font-size:12px;
 }
 
 footer strong{
+  color:var(--cyan);
   direction:ltr;
   display:inline-block;
-  color:#43e5ff;
 }
 
 @media(max-width:700px){
-  .features{
-    grid-template-columns:1fr;
-  }
-
-  .steps{
-    grid-template-columns:1fr;
-  }
-
-  .hero{
-    padding:60px 0 45px;
-  }
-
-  .guide{
-    padding:22px;
-  }
+  .hero{padding:60px 0 50px}
+  .features,.steps{grid-template-columns:1fr}
+  .card{padding:21px}
+  .guide{padding:23px}
+  .shield-area{transform:scale(.9);margin:25px auto}
+  .badge{font-size:10px}
 }
 </style>
 </head>
@@ -265,64 +385,143 @@ footer strong{
 <body>
 
 <header class="container">
+
   <div class="brand">
-    <div class="logo">Z</div>
-    ZARE VPN
+    <div class="brand-icon">
+      <svg width="25" height="25" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L20 5V11C20 16 16.5 20 12 22C7.5 20 4 16 4 11V5L12 2Z"
+        stroke="currentColor" stroke-width="1.7"/>
+        <path d="M8 12L11 15L16 9"
+        stroke="currentColor" stroke-width="1.7"
+        stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="brand-name">ZARE <span>VPN</span></div>
   </div>
 
-  <div class="status">● وب‌سایت رسمی</div>
+  <div class="badge">● OFFICIAL WEBSITE</div>
+
 </header>
 
 <main class="container">
 
 <section class="hero">
 
-  <div class="tag">⚡ تجربه‌ای ساده برای اتصال</div>
+  <div class="eyebrow">
+    <span class="live-dot"></span>
+    نسل جدید تجربه اتصال
+  </div>
 
   <h1>ZARE VPN</h1>
 
-  <p class="description">
-    با ZARE VPN برنامه را دریافت کن
-    و در چند قدم ساده راه‌اندازی‌اش کن.
+  <p class="subtitle">
+    اتصال ساده، تجربه‌ای متفاوت
+    <br>
+    برنامه رسمی ZARE VPN را دریافت کن.
   </p>
 
-  <div class="app-logo">
-    <span>Z</span>
+  <div class="shield-area">
+
+    <div class="glow"></div>
+    <div class="shield-ring"></div>
+
+    <svg class="shield" viewBox="0 0 130 150" fill="none"
+         xmlns="http://www.w3.org/2000/svg">
+
+      <defs>
+        <linearGradient id="shieldGradient" x1="10" y1="10" x2="120" y2="145">
+          <stop stop-color="#54F2FF"/>
+          <stop offset=".5" stop-color="#328CFF"/>
+          <stop offset="1" stop-color="#1744B8"/>
+        </linearGradient>
+
+        <linearGradient id="innerGradient" x1="35" y1="30" x2="95" y2="120">
+          <stop stop-color="#163B68"/>
+          <stop offset="1" stop-color="#07162C"/>
+        </linearGradient>
+      </defs>
+
+      <path d="M65 5L118 24V66C118 103 96 130 65 145C34 130 12 103 12 66V24L65 5Z"
+        fill="url(#shieldGradient)" fill-opacity=".15"
+        stroke="url(#shieldGradient)" stroke-width="3"/>
+
+      <path d="M65 17L107 32V66C107 96 89 118 65 132C41 118 23 96 23 66V32L65 17Z"
+        fill="url(#innerGradient)"
+        stroke="#4BE7FF" stroke-opacity=".55" stroke-width="1.5"/>
+
+      <path d="M65 37L88 47V65C88 84 78 98 65 106C52 98 42 84 42 65V47L65 37Z"
+        fill="#43DFFF" fill-opacity=".12"
+        stroke="#43E5FF" stroke-opacity=".65"/>
+
+      <path d="M53 68L62 77L79 57"
+        stroke="#76F5FF" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+      <circle cx="65" cy="12" r="3" fill="#B8FAFF"/>
+    </svg>
+
   </div>
 
   <a class="download"
-  href="https://github.com/armanlife/arman-vpn-client/releases/latest/download/Arman-VPN-Android-universal.apk">
+     href="https://github.com/armanlife/arman-vpn-client/releases/latest/download/Arman-VPN-Android-universal.apk">
 
-    <span>↓</span>
+    <svg viewBox="0 0 24 24" fill="none">
+      <path d="M12 3V15M7 10L12 15L17 10M5 20H19"
+      stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
     دانلود مستقیم برنامه
 
   </a>
 
-  <div class="hint">
-    فایل نصب اندروید (APK)
+  <div class="download-info">
+    ANDROID APK · OFFICIAL RELEASE
   </div>
 
 </section>
 
 <section class="features">
 
-  <div class="feature">
-    <div class="icon">⚡</div>
+  <article class="card">
+    <div class="card-icon">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M13 2L4 14H11L10 22L20 9H13L13 2Z"
+        stroke="currentColor" stroke-width="1.7"
+        stroke-linejoin="round"/>
+      </svg>
+    </div>
     <h3>راه‌اندازی آسان</h3>
-    <p>دانلود و نصب در چند مرحله ساده</p>
-  </div>
+    <p>دریافت و نصب برنامه در چند مرحله ساده.</p>
+  </article>
 
-  <div class="feature">
-    <div class="icon">📱</div>
+  <article class="card">
+    <div class="card-icon">
+      <svg viewBox="0 0 24 24" fill="none">
+        <rect x="5" y="2" width="14" height="20" rx="3"
+        stroke="currentColor" stroke-width="1.7"/>
+        <path d="M10 18H14"
+        stroke="currentColor" stroke-width="1.7"
+        stroke-linecap="round"/>
+      </svg>
+    </div>
     <h3>مخصوص اندروید</h3>
-    <p>دریافت فایل نصب APK برای گوشی</p>
-  </div>
+    <p>دریافت فایل نصب APK برای گوشی اندرویدی.</p>
+  </article>
 
-  <div class="feature">
-    <div class="icon">🛡️</div>
-    <h3>تجربه‌ای مطمئن‌تر</h3>
-    <p>مجوزها و تنظیمات برنامه را بررسی کن</p>
-  </div>
+  <article class="card">
+    <div class="card-icon">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L20 5V11C20 16 16.5 20 12 22C7.5 20 4 16 4 11V5L12 2Z"
+        stroke="currentColor" stroke-width="1.7"/>
+        <path d="M8 12L11 15L16 9"
+        stroke="currentColor" stroke-width="1.7"
+        stroke-linecap="round"/>
+      </svg>
+    </div>
+    <h3>امنیت و کنترل</h3>
+    <p>مجوزها و تنظیمات اتصال را با دقت بررسی کن.</p>
+  </article>
 
 </section>
 
@@ -335,8 +534,8 @@ footer strong{
     <div class="step">
       <div class="number">۱</div>
       <div>
-        <b>دانلود فایل</b>
-        <span>روی دکمه دانلود بزن و فایل APK را دریافت کن.</span>
+        <b>دانلود APK</b>
+        <p>روی دکمه دانلود بزن و فایل نصب را دریافت کن.</p>
       </div>
     </div>
 
@@ -344,7 +543,7 @@ footer strong{
       <div class="number">۲</div>
       <div>
         <b>اجازه نصب</b>
-        <span>در صورت نیاز اجازه نصب از مرورگر مورداعتماد را فعال کن.</span>
+        <p>در صورت نیاز اجازه نصب از مرورگر مورد اعتماد را فعال کن.</p>
       </div>
     </div>
 
@@ -352,7 +551,7 @@ footer strong{
       <div class="number">۳</div>
       <div>
         <b>نصب و اجرا</b>
-        <span>برنامه را نصب کن و اجرا کن.</span>
+        <p>برنامه را نصب کن و برای شروع آن را اجرا کن.</p>
       </div>
     </div>
 
